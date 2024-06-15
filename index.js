@@ -10,8 +10,8 @@ const COMMENTS_FILE = path.join(__dirname, 'comments.json');
 const init = async () => {
 
     const server = Hapi.server({
-        port: '0.0.0.0', 
-        host: 'localhost'
+        port: process.env.PORT || 3000, 
+        host: '0.0.0.0'
     });
 
     await server.register(Inert);
